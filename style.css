@@ -1,11 +1,16 @@
+:root {
+    --speed: 3;
+}
+
 .machine {
     background-color: burlywood;
     border: dashed brown 2px;
     height: 500px;
     width: 1000px;
     margin: 50px;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-self: center; */
 }
 
 .slot {
@@ -22,16 +27,23 @@
     line-height: 275px;
 }
 
+#spd-btn, #start-btn {
+    padding: 1%;
+    margin: 10px;
+    background-color: rgb(150, 202, 204);
+    border-radius: 5px;
+}
+
 #value1, #value3 {
     animation-name: slotspin;
     animation-iteration-count: infinite;
-    animation-duration: 0.2s;
+    animation-duration: calc((6 - var(--speed)) * 0.1s);
 }
 
 #value2 {
     animation-name: slotspin_rev;
     animation-iteration-count: infinite;
-    animation-duration: 0.2s;
+    animation-duration: calc((6 - var(--speed)) * 0.1s);
 }
 
 @keyframes slotspin {
